@@ -22,9 +22,9 @@ LOGGER = singer.get_logger()
 
 CONFIG = {
     "url": "https://api.recruitee.com/",
-    "company_id": "2680",
-    "auth_token": "RxRuv19F2cWaenyURUFW",
-    "start_date": "2002-02-26T09:43:49.000000Z"
+    "company_id": "3233",
+    "auth_token": "auth_token",
+    "start_date": "1900-02-26T09:43:49.000000Z"
 }
 
 ENDPOINTS = {
