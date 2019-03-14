@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "name": {
+            "type": ["null","string"]
+        },
+        "category": {
+            "type": ["null","string"]
+        },
+        "offer_id": {
+            "type": ["null","number"]
+        },
+        "position":{
+            "type": ["null","number"]
+        }
+    }
+}

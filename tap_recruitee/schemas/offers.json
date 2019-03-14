@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "title": {
+            "type": ["null","string"]
+        },
+        "kind": {
+            "type": ["null","string"]
+        },
+        "created_at": {
+            "type": ["null","string"],
+            "format": "date-time"
+        },
+        "published_at": {
+            "type": ["null","string"],
+            "format": "date-time"
+        },
+        "updated_at": {
+            "type": ["null","string"],
+            "format": "date-time"
+        },
+        "country_code": {
+            "type": ["null","string"]
+        },
+        "city": {
+            "type": ["null","string"]
+        },
+        "department": {
+            "type": ["null","string"]
+        },
+        "url": {
+            "type": ["null","string"]
+        },
+        "status": {
+            "type": ["null","string"]
+        },
+        "candidates_count": {
+            "type": ["null","number"]
+        },
+        "qualified_candidates_count": {
+            "type": ["null","number"]
+        }
+    }
+}

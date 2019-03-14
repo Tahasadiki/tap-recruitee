@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "tag_id": {
+            "type": "number"
+        },
+        "name": {
+            "type": ["null","string"]
+        },
+        "candidate_id": {
+            "type": ["null","number"]
+        }
+    }
+}

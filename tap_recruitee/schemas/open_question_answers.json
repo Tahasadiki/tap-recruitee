@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": ["number"]
+        },
+        "question": {
+            "type": ["string"]
+        },
+        "kind": {
+            "type": ["nul","string"]
+        },
+        "content": {
+            "type": ["null","string"]
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": ["null","integer"]
+        },
+        "name": {
+            "type": ["null","string"]
+        },
+        "provider": {
+            "type": ["null","string"]
+        },
+        "location": {
+            "type": ["null","string"]
+        },
+        "website": {
+            "type": ["null","string"]
+        },
+        "description": {
+            "type": ["null","string"]
+        },
+        "codename": {
+            "type": ["null","string"]
+        },
+        "category": {
+            "type": ["null","string"]
+        },
+        "require_additional_options": {
+            "type": ["null","boolean"]
+        },
+        "premium": {
+            "type": ["null","boolean"]
+        },
+        "position": {
+            "type": ["null","integer"]
+        },
+        "logo_url": {
+            "type": ["null","string"]
+        }
+    }
+}

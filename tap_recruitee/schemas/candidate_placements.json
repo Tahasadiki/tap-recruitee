@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "number"
+        },
+        "offer_id": {
+            "type": ["null","number"]
+        },
+        "stage_id": {
+            "type": ["null","number"]
+        },
+        "disqualified": {
+            "type": ["null","boolean"]
+        },
+        "disqualify_reason": {
+            "type": ["null","string"]
+        },
+        "candidate_id": {
+            "type": ["null","number"]
+        }
+    }
+}
