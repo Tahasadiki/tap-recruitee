@@ -28,14 +28,14 @@ CONFIG = {
 }
 
 ENDPOINTS = {
-    "job_boards": "c/{0}/job_boards?auth_token={1}",
-    "candidates": "c/{0}/search/new/candidates?auth_token={1}&sort_by=created_at_desc&page={2}&limit=100",
-    "offers": "c/{0}/offers?auth_token={1}"
+    "job_boards": "c/{0}/job_boards",
+    "candidates": "c/{0}/search/new/candidates?sort_by=created_at_desc&page={1}&limit=100",
+    "offers": "c/{0}/offers"
 }
 
 
 def get_endpoint(endpoint, kwargs):
-    '''Get the full url of the endpoint'''
+    '''Get the headers and full url of the endpoint'''
     if endpoint not in ENDPOINTS:
         raise ValueError("Invalid endpoint {}".format(endpoint))
 
@@ -45,7 +45,8 @@ def get_endpoint(endpoint, kwargs):
         page = kwargs[0]
     else:
         page = None
-    return CONFIG["url"] + ENDPOINTS[endpoint].format(company_id, auth_token, page)
+    headers = {'Authorization': 'Bearer ' + auth_token}
+    return (headers, CONFIG["url"] + ENDPOINTS[endpoint].format(company_id, page))
 
 
 def iso_format(datetime):
@@ -73,9 +74,10 @@ def giveup(exc):
 
 @utils.backoff((backoff.expo, requests.exceptions.RequestException), giveup)
 @utils.ratelimit(20, 1)
-def gen_request(stram_id, url):
+def gen_request(stram_id, endpoint):
+    headers, url = endpoint
     with metrics.http_request_timer(stram_id) as timer:
-        resp = requests.get(url)
+        resp = requests.get(url, headers=headers)
         timer.tags[metrics.Tag.http_status_code] = resp.status_code
         resp.raise_for_status()
         return resp.json()
